@@ -1,77 +1,134 @@
 <!DOCTYPE html>
-<html>
-	<head>
+<head>
+<title></title>
+<style>
+	body {
+	background: #010101;
+	height: 100vh;
+	text-align: center;
+	}
+
+	.container {
+		height: 100%;
+		perspective: 2900px;
+		background: #010101;
+		margin-top: 100px;
+	}
+
+	.dice {
+		position: relative;
+		margin: 0 auto;
+		height: 200px;
+		width: 200px;
+		animation: spin 9s infinite alternate;
+		transform-style: preserve-3d;
+	}
+
+	@keyframes spin {
+		0% {
+			transform: rotateX(90deg) rotateY(360deg) translateZ(0px);
+		}
+		20% {
+			transform: rotateY(-90deg) rotateX(360deg) translateZ(0px);
+		}
+		40% {
+			transform: rotateX(-90deg) rotateX(360deg) translateZ(0px);
+		}
+		60% {
+			transform: rotateY(90deg) rotateY(360deg) translateZ(0px);
+		}
+		80% {
+			transform: rotateX(-90deg) rotateX(360deg) translateZ(0px);
+		}
+		100% {
+			transform: translateZ(0px);
+		}
+	}
+
+	.container:hover .dice {
+		animation: none;
+		width: auto;
+	}
+
 	
-		<title>Phoenix Photography </title>
-	
-		<style>
-			body{
-				
-				text-align: center;
-				font-size: 1.2em;
-				padding: 1% 0;
-				background: url('bg2.jpg') no-repeat center center fixed; 
-						                  -webkit-background-size: cover;
-						                  -moz-background-size: cover;
-						                  -o-background-size: cover;
-						                  background-size: cover;  
-			}
+	.dice > div {
+		position: absolute;
+		height: 200px;
+		width: 200px;
+		transition: all 1s;
+		opacity: .8;
+	}
 
-			img{
-				width: 23%;
-				margin: 1%;
-				transition: all 1s, transform .5s, box-shadow .5s;
-			}
+	.container:hover .dice > .side {
+		position: relative;
+		transform: none;
+		display: inline-block;
+		margin: 1%;
+	}
 
-			img:hover{
-				box-shadow: 6px 6px 20px rgba(0,0,0,0.6);
-				transform: scale(1.02);
-			}
+	.container .dice > .side:hover {
+		transform: scale(1.1);
+	}
 
-			img:focus{
-				width: 46%;
-				box-shadow: 12px 12px 25px rgba(0,0,0,0.7);
-				transform: none;
-			}
+	.one {
+		transform: rotateX(90deg) translateZ(100px);
+		background-color: #E3493B;
+	}
 
-			h1{
-				font-family: Freestyle Script;
-				font-size: 4.5em;
-				margin: 0% auto;
-				color: #e2eef5;
-			}
+	.two {
+		transform: translateZ(100px);
+		background-color: #23B5AF;
+	}
 
-			h2{
-				font-family: Britannic Bold;
-				color: #e2eef5;
-			}
+	.three {
+		transform: rotateY(90deg) translateZ(100px);
+		background-color: #E8487F;
+	}
 
-			p{
-				font-family: Britannic Bold;
-				color: #e2eef5;
-			}
+	.four {
+		transform: rotateY(180deg) translateZ(100px);
+		background-color: red;
+	}
+
+	.five {
+		transform: rotateY(-90deg) translateZ(100px);
+		background-color: green;
+	}
+
+	.six {
+		transform: rotateX(-90deg) translateZ(100px);
+		background-color: yellow;
+	}
+
+	img{
+		height: 150px;
+		width: 150px;
+		margin: 3%;
+	}
+
+	h1{
+		color: black;
+		font-size: 1.3em;
+		margin: auto;
+	}
 			
-		</style>
+
+</style>
+</head>
+<body>
+	<div class="container">
+	<div class="dice">
+		<div class="side one"><a href="https://tronghung1104.github.io/my-first-website/" target="_blank"><img src="1.png"><h1>My First Website</h1></a></div>
 		
-	
-	</head>
-	<body>
-
-		<h1>Phoenix Photography</h1>
-
-		<h2>A photo gallery of Cats</h2>
-		<p>Click on an image to enlarge it, you can also use the <strong>tab key</strong> to navigate to the next image.</p>
-			
-		<img tabindex="1" src="1.jpg" alt="Image of Cat">
-		<img tabindex="2" src="2.jpg" alt="Image of Cat">
-		<img tabindex="3" src="3.jpg" alt="Image of Cat">
-		<img tabindex="4" src="4.jpg" alt="Image of Cat">
-		<img tabindex="5" src="5.jpg" alt="Image of Cat">
-		<img tabindex="6" src="6.jpg" alt="Image of Cat">
-		<img tabindex="7" src="7.jpg" alt="Image of Cat">
-		<img tabindex="8" src="8.jpg" alt="Image of Cat">
-		<img tabindex="9" src="9.jpg" alt="Image of Cat">
-	
-	
-	</body>
-</html>
+		<div class="side two"><a href="https://tronghung1104.github.io/The-Hidden-Tiger-Magic-Lion-Club/" target="_blank"><img src="2.png"><h1>HTML Club</h1></a></div>
+		
+		<div class="side three"><a href="https://tronghung1104.github.io/Phoenix-Photography/" target="_blank"><img src="3.png"><h1>Phoenix Photography</h1></a></div>
+		
+		<div class="side four"><a href="https://tronghung1104.github.io/spinning-dice/" target="_blank"><img src="4.png"><h1>Spinning Dice</h1></a></div>
+		
+		<div class="side five"><a href="https://uk.linkedin.com/in/hung-luu-715a10114" target="_blank"><img src="5.png"><h1>Linkedin Profile</h1></a></div>
+		
+		<div class="side six"><a href="https://github.com/tronghung1104" target="_blank"><img src="6.png"><h1>Github Profile</h1></a></div>
+	</div>
+</div>
+</body>
